@@ -15,6 +15,8 @@ namespace Escola.Repository
 
         public DbSet<Usuario> Usuarios { get; set; }
 
+        public DbSet<Aluno> Alunos { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -35,6 +37,26 @@ namespace Escola.Repository
 
 
             });
+
+            modelBuilder.Entity<Aluno>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.NomeAluno)
+                      .IsRequired()
+                      .HasMaxLength(300);
+
+                entity.Property(e => e.Email)
+                      .IsRequired()
+                      .HasMaxLength(100);
+
+                entity.Property(e => e.Matricula)
+                      .IsRequired()
+                      .HasMaxLength(50);
+
+                entity.ToTable("Alunos");
+            });
+
         }
 
     }

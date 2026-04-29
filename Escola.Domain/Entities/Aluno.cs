@@ -13,8 +13,9 @@ namespace Escola.Domain.Entities
         public Aluno()
         {
             AlunoId = Guid.NewGuid();
-            NomeAluno = String.Empty;
-            Email = String.Empty;
+            NomeAluno = string.Empty;
+            Email = string.Empty;
+            Matricula = string.Empty;
         }
 
         public int Id { get; set; }
@@ -22,7 +23,7 @@ namespace Escola.Domain.Entities
         public string NomeAluno { get; set; }
 
         public string Email { get; set; }
+        public string Matricula { get; set; }
 
-        public Escola Escola { get; set; }  
     }
 }

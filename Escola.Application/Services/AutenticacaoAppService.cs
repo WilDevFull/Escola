@@ -48,7 +48,8 @@ namespace Escola.Application.Services
             return new UsuarioDTO
             {
                 UsuarioId = usuario.UsuarioId,
-                Nome = usuario.Nome
+                Nome = usuario.Nome,
+                Email = usuario.Email
             };
         }
 
